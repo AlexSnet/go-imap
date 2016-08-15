@@ -350,7 +350,8 @@ func (c *Client) Expunge(uids *SeqSet) (cmd *Command, err error) {
 // is the caller's responsibility to quote strings when necessary. All strings
 // must use UTF-8 encoding.
 func (c *Client) Search(spec ...Field) (cmd *Command, err error) {
-	return c.Send("SEARCH", append([]Field{"CHARSET", "UTF-8"}, spec...)...)
+	//return c.Send("SEARCH", append([]Field{"CHARSET", "UTF-8"}, spec...)...)
+	return c.Send("SEARCH", spec...)
 }
 
 // Fetch retrieves data associated with the specified message(s) in the mailbox.
